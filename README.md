@@ -1,36 +1,157 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Got you — here’s a polished, professional **README.md specifically for your Daily Dashboard project**
+(Unsplash random image, Weatherstack weather, API-Ninjas quotes, city search, dashboard UI).
 
-## Getting Started
+It’s clean, explains the features, technologies, environment setup, API usage, and file structure.
 
-First, run the development server:
+---
+
+# **README.md — Daily Dashboard App**
+
+```md
+# 🌤️ Daily Dashboard  
+A modern Next.js application that displays a curated daily experience with a **random Unsplash image**, a **daily quote**, and **live weather** based on a user-selected city.
+
+This project uses server-side API routes for secure data fetching and client-side rendering for a smooth, app-like dashboard experience.
+
+---
+
+## ⭐ Features
+
+### 🖼️ **Random Daily Image**
+- Uses the **Unsplash API**
+- Shows a new image each time the dashboard loads
+- Displays the photographer’s name + alt description
+
+### 📝 **Daily Quote**
+- Fetches quotes from **API-Ninjas Quotes API**
+- Pulls multiple quotes and selects one at random
+- Automatically changes on reload
+
+### 🌦️ **Weather Card**
+- Powered by **Weatherstack API**
+- Shows:
+  - Current temperature (converted to Fahrenheit)
+  - Weather icon + description
+  - Feels-like temperature
+  - Humidity
+  - Wind speed
+- Includes a city search bar (users can enter any location)
+- Displays fallback errors if a request fails
+
+### 🎨 **Styling**
+- Gradient dashboard background  
+- Custom “glass card” style inspired by CodePen article UI  
+- Compact layout designed to fit on a single screen  
+- Responsive structure using CSS + inline Next.js styling
+
+---
+
+## 🧩 Tech Stack
+
+- **Next.js 14 (App Router)**
+- **React**
+- **Server Components + Client Components**
+- **API Routes (`/api/dashboard` and `/api/search`)**
+- **Unsplash API**
+- **Weatherstack API**
+- **API-Ninjas Quotes API**
+
+---
+
+## 🗂️ Project Structure
+
+```
+
+app/
+├── api/
+│   ├── dashboard/
+│   │   └── route.ts        # Combines weather, quote, and image API calls
+│   ├── search/
+│   │   └── route.ts        # Unsplash search route
+│
+├── dashboard/
+│   ├── page.tsx            # Redirect target page
+│   └── DashboardClient.tsx # Full dashboard UI + client logic
+│
+├── lib/
+│   └── dashboard.ts        # Fetch helpers for weather, quotes, images
+│
+└── page.tsx                # Redirects / → /dashboard
+
+````
+
+---
+
+## 🔑 Environment Variables
+
+Create a `.env.local` file in your project root:
+
+```env
+UNSPLASH_ACCESS_KEY=your_unsplash_access_key
+WEATHERSTACK_API_KEY=your_weatherstack_api_key
+NINJAS_API_KEY=your_api_ninjas_key
+````
+
+> **Never commit this file.**
+
+---
+
+## 🚀 Getting Started
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000/dashboard
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Search for a city
 
-## Learn More
+Use the search bar to update the weather card instantly.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔌 API Endpoints
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### **GET /api/dashboard**
 
-## Deploy on Vercel
+Returns:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```json
+{
+  "city": "Fort Walton Beach, Florida",
+  "weather": { ... },
+  "quote": { ... },
+  "image": { ... }
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### **GET /api/search?q=mountains**
+
+Proxy route for Unsplash search.
+
+---
+
+## 🤝 Credits
+
+* **Unsplash API** — Daily/random photography
+* **Weatherstack** — Live weather data
+* **API-Ninjas** — Daily quotes
+* Some of the UI styling inspired by **RAFA3L** on CodePen
+
+---
+
+### ⭐ If you like this project, feel free to star it!
+
+```
