@@ -1,10 +1,10 @@
 // app/lib/dashboard.ts
 
-const WEATHERSTACK_BASE_URL = "http://api.weatherstack.com";
+const WEATHERSTACK_BASE_URL = `http://api.weatherstack.com`;
 const API_NINJAS_QUOTES_URL =
-  "https://api.api-ninjas.com/v2/quotes?categories=success,wisdom";
+  `https://api.api-ninjas.com/v2/quotes?category=success,wisdom,life,knowledge,attitude,leadership,hope,happiness,learning,experience`;
 const UNSPLASH_RANDOM_URL =
-  "https://api.unsplash.com/photos/random?query=landscape&orientation=landscape";
+  `https://api.unsplash.com/photos/random?query=landscape&orientation=landscape`;
 
 export type WeatherData = {
   request?: {

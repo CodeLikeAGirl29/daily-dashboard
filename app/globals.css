@@ -24,3 +24,68 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* === Dashboard cards === */
+
+.dashboard-card {
+  position: relative;
+  overflow: hidden;
+  padding: 12px 20px 16px;
+  font-weight: 300;
+
+  border-bottom: 4px solid #d6d7d711;
+  border-left: 4px solid #d6d7d711;
+
+  background: linear-gradient(90deg, #46506433 0%, #4f5d7533);
+  border-top-right-radius: 32px;
+
+  /* subtle glassy feel */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+}
+
+.dashboard-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-card__title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #ea5c1f;
+  /* that orange accent from the article */
+}
+
+.dashboard-card__subtitle {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.dashboard-card__body {
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}
+
+.dashboard-card__label {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.dashboard-card__value {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}
+
+/* small grid for the bottom stats in the weather card */
+.dashboard-card__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}

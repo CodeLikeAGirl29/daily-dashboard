@@ -263,97 +263,43 @@ export default function DashboardClient() {
             }}
           >
             {/* Quote card */}
-            <article
-              style={{
-                background: "rgba(15, 23, 42, 0.9)",
-                borderRadius: "1rem",
-                padding: "1.5rem",
-                border: "1px solid rgba(148, 163, 184, 0.4)",
-                display: "flex",
-                flexDirection: "column",
-                gap: "0.75rem",
-                boxShadow: "0 18px 40px rgba(15, 23, 42, 0.65)",
-                minHeight: "180px",
-              }}
-            >
-              <h2
-                style={{
-                  fontSize: "1.25rem",
-                  margin: 0,
-                  marginBottom: "0.25rem",
-                }}
-              >
-                Daily Quote
-              </h2>
+            <article className="dashboard-card">
+              <div className="dashboard-card__header">
+                <h2 className="dashboard-card__title">Daily Quote</h2>
+              </div>
 
-              {quote ? (
-                <>
-                  <p
-                    style={{
-                      fontSize: "1rem",
-                      lineHeight: 1.7,
-                      margin: 0,
-                      color: "#e5e7eb",
-                    }}
-                  >
-                    “{quote.quote}”
+              <div className="dashboard-card__body">
+                {quote ? (
+                  <>
+                    <p style={{ margin: 0, lineHeight: 1.7 }}>
+                      “{quote.quote}”
+                    </p>
+                    <p
+                      style={{
+                        margin: "0.4rem 0 0",
+                        color: "#9ca3af",
+                        fontStyle: "italic",
+                        textAlign: "right",
+                        fontSize: "0.9rem",
+                      }}
+                    >
+                      — {quote.author}
+                    </p>
+                  </>
+                ) : (
+                  <p style={{ margin: 0, color: "#f97316", fontSize: "0.9rem" }}>
+                    Quote unavailable right now.
                   </p>
-                  <p
-                    style={{
-                      margin: 0,
-                      color: "#9ca3af",
-                      fontStyle: "italic",
-                      textAlign: "right",
-                    }}
-                  >
-                    — {quote.author}
-                  </p>
-                </>
-              ) : (
-                <p
-                  style={{
-                    margin: 0,
-                    color: "#f97316",
-                    fontSize: "0.9rem",
-                  }}
-                >
-                  Quote unavailable right now.
-                </p>
-              )}
+                )}
+              </div>
             </article>
 
             {/* Weather card */}
-            <article
-              style={{
-                background: "rgba(15, 23, 42, 0.9)",
-                borderRadius: "1rem",
-                padding: "1.5rem",
-                border: "1px solid rgba(148, 163, 184, 0.4)",
-                display: "flex",
-                flexDirection: "column",
-                gap: "1rem",
-                boxShadow: "0 18px 40px rgba(15, 23, 42, 0.65)",
-                minHeight: "180px",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  gap: "0.75rem",
-                }}
-              >
+            <article className="dashboard-card">
+              <div className="dashboard-card__header">
                 <div>
-                  <h2
-                    style={{
-                      fontSize: "1.25rem",
-                      margin: 0,
-                    }}
-                  >
-                    Weather
-                  </h2>
-                  <p style={{ margin: 0, color: "#9ca3af" }}>
+                  <h2 className="dashboard-card__title">Weather</h2>
+                  <p className="dashboard-card__subtitle">
                     {weather
                       ? `${weather.location.name}, ${weather.location.region}`
                       : city}
@@ -377,8 +323,8 @@ export default function DashboardClient() {
                       weather.current.weather_descriptions?.[0] || "Weather"
                     }
                     style={{
-                      width: "56px",
-                      height: "56px",
+                      width: "48px",
+                      height: "48px",
                       borderRadius: "999px",
                     }}
                   />
@@ -392,9 +338,10 @@ export default function DashboardClient() {
                       display: "flex",
                       alignItems: "baseline",
                       gap: "0.3rem",
+                      marginBottom: "0.4rem",
                     }}
                   >
-                    <span style={{ fontSize: "2.7rem", fontWeight: 600 }}>
+                    <span style={{ fontSize: "2.3rem", fontWeight: 600 }}>
                       {tempDisplay}°
                     </span>
                     <span style={{ color: "#9ca3af" }}>F</span>
@@ -405,35 +352,30 @@ export default function DashboardClient() {
                       margin: 0,
                       textTransform: "capitalize",
                       color: "#e5e7eb",
+                      fontSize: "0.95rem",
                     }}
                   >
                     {weather.current.weather_descriptions?.[0] ||
                       "Current weather"}
                   </p>
 
-                  <div
-                    style={{
-                      display: "grid",
-                      gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-                      gap: "0.75rem",
-                      marginTop: "0.5rem",
-                      fontSize: "0.9rem",
-                      color: "#d1d5db",
-                    }}
-                  >
+
+                  <div className="dashboard-card__grid">
                     <div>
-                      <p style={{ margin: 0, color: "#9ca3af" }}>Feels like</p>
-                      <p style={{ margin: 0 }}>{feelsDisplay}°</p>
+                      <p className="dashboard-card__label">Feels like</p>
+                      <p className="dashboard-card__value">
+                        {feelsDisplay}°
+                      </p>
                     </div>
                     <div>
-                      <p style={{ margin: 0, color: "#9ca3af" }}>Humidity</p>
-                      <p style={{ margin: 0 }}>
+                      <p className="dashboard-card__label">Humidity</p>
+                      <p className="dashboard-card__value">
                         {weather.current.humidity}%
                       </p>
                     </div>
                     <div>
-                      <p style={{ margin: 0, color: "#9ca3af" }}>Wind</p>
-                      <p style={{ margin: 0 }}>
+                      <p className="dashboard-card__label">Wind</p>
+                      <p className="dashboard-card__value">
                         {weather.current.wind_speed} mph
                       </p>
                     </div>
