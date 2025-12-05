@@ -1,11 +1,4 @@
-Got you — here’s a polished, professional **README.md specifically for your Daily Dashboard project**
-(Unsplash random image, Weatherstack weather, API-Ninjas quotes, city search, dashboard UI).
-
-It’s clean, explains the features, technologies, environment setup, API usage, and file structure.
-
----
-
-# **README.md — Daily Dashboard App**
+# Daily Dashboard App**
 
 ```md
 # 🌤️ Daily Dashboard  
