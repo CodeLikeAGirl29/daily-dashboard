@@ -1,10 +1,10 @@
-# Daily Dashboard App**
-
-```md
 # 🌤️ Daily Dashboard  
 A modern Next.js application that displays a curated daily experience with a **random Unsplash image**, a **daily quote**, and **live weather** based on a user-selected city.
 
 This project uses server-side API routes for secure data fetching and client-side rendering for a smooth, app-like dashboard experience.
+
+<img width="1920" height="917" alt="image" src="https://github.com/user-attachments/assets/fbab4ff3-c849-4165-a88d-beeb5570bfc7" />
+
 
 ---
 
